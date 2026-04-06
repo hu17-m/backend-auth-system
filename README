@@ -1,12 +1,10 @@
-# 🔐 Backend Authentication & Role-Based Access System
+🔐 Backend Authentication & Role-Based Access System
 
 This project is a backend application developed using **Node.js, Express.js, and MongoDB**, implementing secure **JWT-based authentication** and **role-based access control (RBAC)**.
 
 The system allows users to register, authenticate, and access protected resources based on their assigned roles such as **Super Admin, Admin, Teacher, and Student**.
 
----
-
-## 🚀 Features
+ 🚀 Features
 
 * User Registration with role assignment
 * Secure Login using JWT (JSON Web Token)
@@ -16,20 +14,16 @@ The system allows users to register, authenticate, and access protected resource
 * Clean and modular backend architecture
 * API testing using Thunder Client / Postman
 
----
+🛠️ Tech Stack
 
-## 🛠️ Tech Stack
+* Backend:** Node.js, Express.js
+* Database:** MongoDB with Mongoose
+* Authentication:** JSON Web Token (JWT)
+* Security:** bcrypt (password hashing)
 
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB with Mongoose
-* **Authentication:** JSON Web Token (JWT)
-* **Security:** bcrypt (password hashing)
+ 📁 Project Structure
 
----
 
-## 📁 Project Structure
-
-```
 backend/
 │── config/
 │   └── db.js
@@ -45,37 +39,30 @@ backend/
 │   └── protectedRoutes.js
 │── .env
 │── server.js
-```
 
----
 
-## 🔐 Authentication Flow
+ 🔐 Authentication Flow
 
 1. User registers with name, email, password, and role
 2. Password is securely hashed before storing in database
 3. User logs in and receives a JWT token
 4. Token is sent in request headers:
 
-   ```
    Authorization: Bearer <token>
-   ```
+  
 5. Middleware verifies token and extracts user information
 6. Role-based middleware authorizes access to specific routes
 
----
 
-## 📡 API Endpoints
-
-### 🔹 Authentication
+ 📡 API Endpoints
+🔹 Authentication
 
 | Method | Endpoint             | Description                          |
 | ------ | -------------------- | ------------------------------------ |
 | POST   | `/api/auth/register` | Register a new user                  |
 | POST   | `/api/auth/login`    | Authenticate user and generate token |
 
----
-
-### 🔹 Protected Routes
+ 🔹 Protected Routes
 
 | Method | Endpoint         | Access Control          |
 | ------ | ---------------- | ----------------------- |
@@ -84,63 +71,46 @@ backend/
 | GET    | `/api/teacher`   | Teacher                 |
 | GET    | `/api/student`   | Student                 |
 
----
+ 🧪 Sample Request
 
-## 🧪 Sample Request
+ Login Request
 
-### Login Request
-
-```
 POST /api/auth/login
-```
 
 ```json
 {
   "email": "user@gmail.com",
   "password": "123456"
 }
-```
 
----
-
-## 📸 API Demonstration
+📸 API Demonstration
 
 ![Dashboard Output](./screenshot.png)
 
----
-
-## ⚙️ Setup Instructions
+ ⚙️ Setup Instructions
 
 1. Clone the repository
 
-```
 git clone https://github.com/hu17-m/backend-auth-system.git
-```
 
 2. Install dependencies
 
-```
 npm install
-```
+
 
 3. Configure environment variables
    Create a `.env` file:
 
-```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-```
+
 
 4. Run the application
 
-```
 npx nodemon server.js
-```
 
----
-
-## 💡 Key Concepts Implemented
+ 💡 Key Concepts Implemented
 
 * Authentication vs Authorization
 * JWT token generation and verification
@@ -149,20 +119,14 @@ npx nodemon server.js
 * Role-based access control (RBAC)
 * Modular backend architecture
 
----
-
-## 📌 Notes
+ 📌 Notes
 
 * Tokens are validated on each protected request
 * Role verification ensures restricted access
 * Sensitive data like passwords are never exposed in responses
 
----
-
-## 🙋‍♂️ Author
+ 🙋‍♂️ Author
 
 Himanshu Gadekar
 
 This project was developed as part of a backend development assignment to demonstrate practical implementation of authentication and authorization mechanisms.
-
----
